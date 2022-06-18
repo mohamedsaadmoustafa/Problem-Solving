@@ -7,9 +7,6 @@ class Solution:
 # Runtime Error
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        # return pow(x, n) # xD
-            def myPow(self, x: float, n: int) -> float:
-        # return pow(x, n) # xD
         if n == 0: return 1
         elif n == 1: return x
         elif n < 0: return (1 / (x**-n))
@@ -19,19 +16,12 @@ class Solution:
 # wronge answer at 
 #  myPow(34.00515 , -3)
 class Solution:
-    def __init__(self):
-        self.head = None
-        
-    def abs(self, n):
-        if n < 0: n = -n
-        return n
-
     def myPow(self, x: float, n: int) -> float:
         # return pow(x, n) # xD
         result = 1
         if n == 0: return 1
         if n < 0: 
-            x, n = 1/x, self.abs(x)
+            x, n = 1/x, -x
         # Exponentiation by Squaring
         while n:
             if n % 2: result *= x
@@ -39,6 +29,7 @@ class Solution:
             n // = 2
         return result
       
+	
 #With constant auxiliary memory
 class Solution:
     def myPow(self, x: float, n: int) -> float:
@@ -50,8 +41,6 @@ class Solution:
             return self.myPow( x*x,  n/2 );
         elif n % 2 == 1:
              return x * self.myPow( x*x, (n-1)/2 );
-          
-          
           
           
 class Solution:
@@ -68,7 +57,6 @@ class Solution:
 #The iterative version of the algorithm also uses a bounded auxiliary space
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        # return pow(x, n) # xD
         y = 1
         if n == 0: return 1
         if n < 0: 
