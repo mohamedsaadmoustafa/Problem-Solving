@@ -7,3 +7,9 @@ class Solution:
                 return False
             map[ss], reverse_map[tt] = tt, ss
         return True
+
+    
+# Another Solution
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        return [*map(t.index, t)] == [*map(s.index, s)]
