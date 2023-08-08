@@ -1,9 +1,9 @@
 type F = (x: number) => number;
 
 function compose(functions: F[]): F {
-    const reversedFunctions = functions.slice().reverse();
+    functions.reverse();
     return function(x) {
-        for (let f of reversedFunctions){
+        for (let f of functions){
             x = f(x);
         }
         return x;
