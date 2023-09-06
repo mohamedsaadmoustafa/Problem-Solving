@@ -23,3 +23,9 @@ class Solution:
         n = max(nums) + 1
         e = set(range(1, len(nums)+1)).difference(sorted_nums)
         return list(e)
+
+
+# Another Solution
+class Solution:
+    def findDisappearedNumbers(self, nums):
+        return list(set(range(1, len(nums) + 1)).difference(nums))
