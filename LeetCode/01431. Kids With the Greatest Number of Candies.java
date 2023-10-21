@@ -15,3 +15,17 @@ class Solution {
         return result;
     }
 }
+
+
+// Another solution
+class Solution {
+    public static int findMaxStream(int[] arr){
+        return Arrays.stream(arr).max().getAsInt();
+    }
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int maxCandy = findMaxStream(candies);
+        return Arrays.stream(candies)
+                    .mapToObj(candy -> candy + extraCandies >= maxCandy)
+                    .collect(Collectors.toList());
+    }
+}
